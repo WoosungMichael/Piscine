@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wookim <wookim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/20 13:28:00 by wookim            #+#    #+#             */
-/*   Updated: 2021/09/20 13:28:15 by wookim           ###   ########.fr       */
+/*   Created: 2021/09/20 13:28:29 by wookim            #+#    #+#             */
+/*   Updated: 2021/09/20 13:28:47 by wookim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+char	*ft_strstr(char *str, char *to_find)
 {
-	unsigned int	i;
-	unsigned int	j;
+	int	i;
+	int	j;
 
 	i = 0;
-	while (dest[i])
+	if (to_find[0] == '\0')
+		return (str);
+	while (str[i] != '\0')
 	{
+		j = 0;
+		while (str[i + j] == to_find[j] && str[i + j] != '\0')
+		{
+			if (to_find[j + 1] == '\0')
+				return (&str[i]);
+			j++;
+		}
 		i++;
 	}
-	j = 0;
-	while (src[j] && j < nb)
-	{
-		dest[i + j] = src[j];
-		j++;
-	}
-	dest[i + j] = 0;
-	return (dest);
+	return (0);
 }

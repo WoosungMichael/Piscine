@@ -1,31 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wookim <wookim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/20 13:28:00 by wookim            #+#    #+#             */
-/*   Updated: 2021/09/20 13:28:15 by wookim           ###   ########.fr       */
+/*   Created: 2021/09/20 13:39:29 by wookim            #+#    #+#             */
+/*   Updated: 2021/09/20 13:40:17 by wookim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+unsigned int	str_len(char *str)
 {
 	unsigned int	i;
-	unsigned int	j;
 
 	i = 0;
-	while (dest[i])
+	while (str[i])
+		i++;
+	return (i);
+}
+
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+{
+	unsigned int	i;
+	unsigned int	d_len;
+	unsigned int	s_len;
+
+	d_len = str_len(dest);
+	s_len = str_len(src);
+	i = 0;
+	while (*dest)
 	{
+		dest++;
 		i++;
 	}
-	j = 0;
-	while (src[j] && j < nb)
+	while (*src && i + 1 < size)
 	{
-		dest[i + j] = src[j];
-		j++;
+		*dest = *src;
+		dest++;
+		src++;
+		i++;
 	}
-	dest[i + j] = 0;
-	return (dest);
+	*dest = 0;
+	if (d_len > size)
+		return (s_len + size);
+	else
+		return (s_len + d_len);
 }
