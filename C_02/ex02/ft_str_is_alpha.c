@@ -6,7 +6,7 @@
 /*   By: wookim <wookim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 17:48:26 by wookim            #+#    #+#             */
-/*   Updated: 2021/09/15 17:50:43 by wookim           ###   ########.fr       */
+/*   Updated: 2021/09/18 19:15:26 by wookim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@ int	ft_str_is_alpha(char *str)
 	int	flag;
 	int	cnt;
 
-	flag = 0;
+	flag = 1;
 	cnt = 0;
 	while (*str)
 	{
-		if (('a' <= *str && *str <= 'z') || ('A' <= *str && *str <= 'Z'))
+		if (*str < 'A' || ('Z' < *str && *str < 'a') || *str > 'z')
 		{
-			flag = 1;
+			flag = 0;
 		}
 		cnt++;
 		str++;

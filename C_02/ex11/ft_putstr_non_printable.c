@@ -6,36 +6,37 @@
 /*   By: wookim <wookim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 19:06:32 by wookim            #+#    #+#             */
-/*   Updated: 2021/09/15 19:09:46 by wookim           ###   ########.fr       */
+/*   Updated: 2021/09/18 19:13:13 by wookim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
 void	ft_putstr_non_printable(char *str)
 {
 	char	*hex;
-	int		i;
+	 int	neg;
 
 	hex = "0123456789abcdef";
-	i = 0;
-	while (str[i])
+	while (*str)
 	{
-		if (str[i] < ' ' || str[i] > '~' )
+		if (*str <= 31 || *str >= 127)
 		{
-			ft_putchar('\\');
-			ft_putchar(hex[str[i] / 16]);
-			ft_putchar(hex[str[i] % 16]);
+			write(1, "\\", 1);
+			if (*str < 0)
+			{
+				neg = (-128 - (*str)) * -1 + 128;
+				write(1, &hex[neg / 16], 1);
+				write(1, &hex[neg % 16], 1);
+			}
+			else
+			{
+				write(1, &hex[*str / 16], 1);
+				write(1, &hex[*str % 16], 1);
+			}
 		}
 		else
-		{
-			ft_putchar(str[i]);
-		}
-		i++;
+			write(1, str, 1);
+		str++;
 	}
 }
