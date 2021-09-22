@@ -6,11 +6,11 @@
 /*   By: wookim <wookim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 13:45:29 by wookim            #+#    #+#             */
-/*   Updated: 2021/09/20 13:45:50 by wookim           ###   ########.fr       */
+/*   Updated: 2021/09/22 09:39:00 by wookim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
 	int		i;
 

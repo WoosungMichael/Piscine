@@ -5,37 +5,47 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wookim <wookim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/20 13:50:42 by wookim            #+#    #+#             */
-/*   Updated: 2021/09/20 15:05:59 by wookim           ###   ########.fr       */
+/*   Created: 2021/09/22 09:34:45 by wookim            #+#    #+#             */
+/*   Updated: 2021/09/22 09:46:31 by wookim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_atoi(char *str)
+int	check(char c)
 {
-    int i;
-    int flag;
-    int answer;
+	if (c == ' ' || c == '\n')
+		return (1);
+	else if (c == '\t' || c == '\v')
+		return (1);
+	else if (c == '\f' || c == '\r')
+		return (1);
+	else
+		return (0);
+}
 
-    i = 0;
-    flag = 1;
-    answer = 0;
-    while (str[i] <= 32)
-        i++;
+int	ft_atoi(char *str)
+{
+	int	i;
+	int	flag;
+	int	answer;
+
+	i = 0;
+	flag = 1;
+	answer = 0;
+	while (check(str[i]))
+		i++;
 	while (str[i] == '-' || str[i] == '+')
 	{
-    	if (str[i] == '-')
-	    {
-    	    flag *= -1;
-        	i++;
-    	}
-    	else if (str[i] == '+')
-        	i++;
+		if (str[i] == '-')
+		{
+			flag *= -1;
+		}
+		i++;
 	}
 	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
-    {
-        answer *= 10;
-        answer += str[i] - '0';
-        i++;
-    }
-    return (answer * flag);
+	{
+		answer *= 10;
+		answer += str[i] - '0';
+		i++;
+	}
+	return (answer * flag);
 }

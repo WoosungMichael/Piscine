@@ -6,13 +6,13 @@
 /*   By: wookim <wookim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 13:46:24 by wookim            #+#    #+#             */
-/*   Updated: 2021/09/20 13:46:35 by wookim           ###   ########.fr       */
+/*   Updated: 2021/09/22 09:39:21 by wookim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void		ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
 	while (*str)
 	{
