@@ -27,7 +27,7 @@ int	ft_is_sort(int *tab, int length, int (*f)(int, int))
 				return (0);
 			continue ;
 		}
-		else
+		else if (flag > 0)
 		{
 			if (s_flag == 0)
 				s_flag = 1;
