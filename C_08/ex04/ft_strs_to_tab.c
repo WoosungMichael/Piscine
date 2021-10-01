@@ -41,7 +41,7 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 	t_stock_str	*tmp;
 	int			i;
 
-	tmp = (t_stock_str *)((malloc)(sizeof(t_stock_str) * ac + 1));
+	tmp = (t_stock_str *)((malloc)(sizeof(t_stock_str) * (ac + 1)));
 	if (!tmp)
 		return (0);
 	i = 0;
@@ -54,6 +54,6 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 		ft_strcpy(tmp[i].copy, av[i]);
 		i++;
 	}
-	tmp[i].str = '\0';
+	tmp[i].str = 0;
 	return (tmp);
 }
