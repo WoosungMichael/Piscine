@@ -1,4 +1,7 @@
 # Piscine
+
+- Level 9 - 55%
+
 | No |   Project  | Language | Status | Percentage |
 |:--:|:----------:|:--------:|:------:|:----------:|
 | 01 | [Shell 00](https://github.com/WoosungMichael/Piscine/tree/main/Shell_00)   |   Shell  |    ✔️   |      100%     |
