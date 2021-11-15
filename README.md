@@ -1,6 +1,7 @@
 # Piscine
 
 - Level 9 - 55%
+- 2021 42Seoul 5기 합격 (Gun)
 
 | No |   Project  | Language | Status | Percentage |
 |:--:|:----------:|:--------:|:------:|:----------:|
