@@ -2,6 +2,7 @@
 
 - Level 9 - 55%
 - 2021 42Seoul 5기 합격 (Gun)
+- 2021년 11월 Start!
 
 | No |   Project  | Language | Status | Percentage |
 |:--:|:----------:|:--------:|:------:|:----------:|
